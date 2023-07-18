@@ -1,0 +1,16 @@
+{"_id":"64ad59764f7ce5e022a8e67a","index":0,"guid":"126c9fdc-f5f1-4f3e-8b41-9389b75e6db0","isActive":false,"balance":"$2,113.36","picture":"http://placehold.it/32x32","age":20,"eyeColor":"blue","name":"Stout Anthony","gender":"male","company":"OPTICOM","email":"stoutanthony@opticom.com","phone":"+1 (846) 594-2669","address":"162 Amherst Street, Catherine, Wyoming, 843","about":"Aute fugiat aliqua adipisicing anim anim deserunt minim eiusmod fugiat in amet ullamco tempor. Sunt pariatur aute nisi incididunt. Commodo laboris nostrud sit elit pariatur et excepteur dolore laborum culpa in adipisicing ea excepteur.\r\n","registered":"2016-12-28T12:12:45 -07:00","latitude":-84.902685,"longitude":21.131895,"tags":["fugiat","reprehenderit","cillum","labore","est","laborum","aute"],"friends":[{"id":0,"name":"Herman Hayes"},{"id":1,"name":"Jaime Molina"},{"id":2,"name":"Gilliam Webb"}],"greeting":"Hello, Stout Anthony! You have 5 unread messages.","favoriteFruit":"banana"}
+
+1. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string 
+และสร้าง instance และ assign ค่าให้ instance และ print ออกมา
+
+2. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string และฟิลด์ isActive เป็น Boolean 
+และสร้าง instance และ assign ค่าให้ instance และ print ออกมา
+
+3. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string และฟิลด์ isActive เป็น Boolean และฟิลด์ age เป็น int 
+และสร้าง instance และ assign ค่าให้ instance และ print ออกมา
+
+4. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string และฟิลด์ isActive เป็น Boolean และฟิลด์ age เป็น int และฟิลด์ latitude,longitude เป็น float 
+และสร้าง instance และ assign ค่าให้ instance และ print ออกมา
+
+5. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string และฟิลด์ isActive เป็น Boolean และฟิลด์ age เป็น int และฟิลด์ latitude,longitude เป็น float 
+และสร้าง array instance และ assign ค่าให้ array instance เป็นจำนวน 3 instance และ print ออกมา
