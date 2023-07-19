@@ -14,3 +14,43 @@
 
 5. เขียนโปรแกรม golang สร้าง struct มีฟิลด์ name และ gender เป็น string และฟิลด์ isActive เป็น Boolean และฟิลด์ age เป็น int และฟิลด์ latitude,longitude เป็น float 
 และสร้าง array instance และ assign ค่าให้ array instance เป็นจำนวน 3 instance และ print ออกมา
+
+6. นำ struct ที่ได้จากข้อ 5 มาสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "name":"John",
+    "gender":"male",
+    "isActive":true,
+    "age": 12,
+    "latitude": 98.332,
+    "longitude: 87.214
+}
+
+7. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "firstname":"John",
+    "gender":"male",
+    "status":true,
+    "age": 12,
+    "lat": 98.332,
+    "lng: 87.214
+}
+
+8. สร้าง array struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+[
+    {
+        "firstname":"John",
+        "gender":"male",
+        "status":true,
+        "age": 12,
+        "lat": 98.332,
+        "lng: 87.214
+    },
+    {
+        "firstname":"Sam",
+        "gender":"male",
+        "status":false,
+        "age": 55,
+        "lat": 9.332,
+        "lng: 8.214
+    }
+]
