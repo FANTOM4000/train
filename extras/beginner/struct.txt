@@ -54,3 +54,101 @@
         "lng: 8.214
     }
 ]
+
+9. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "firstname":"John",
+    "gender":"male",
+    "status":true,
+    "age": 12,
+    "lat": 98.332,
+    "lng: 87.214,
+    "tags": [
+        "qui",
+        "consectetur",
+        "consectetur",
+        "esse",
+        "velit",
+        "do",
+        "duis"
+    ]
+}
+
+10. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "firstname":"John",
+    "gender":"male",
+    "status":true,
+    "age": 12,
+    "lat": 98.332,
+    "lng: 87.214,
+    "info":{
+        "id": 0,
+        "name": "Murphy Ward"
+    }
+}
+
+11. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "firstname":"John",
+    "gender":"male",
+    "status":true,
+    "age": 12,
+    "lat": 98.332,
+    "lng: 87.214,
+    "info":{
+        "id": 0,
+        "name": "Murphy Ward"
+    },
+    "friends": [
+        {
+            "id": 0,
+            "name": "Murphy Ward"
+        },
+        {
+            "id": 1,
+            "name": "Maxine Harris"
+        },
+        {
+            "id": 2,
+            "name": "Charles Abbott"
+        }
+    ],
+    "info":{
+        "id": 0,
+        "name": "Murphy Ward"
+    },
+    "tags": [
+        "qui",
+        "consectetur",
+        "consectetur",
+        "esse",
+        "velit",
+        "do",
+        "duis"
+    ]
+}
+
+12. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+{
+    "firstname":"John",
+    "gender":"male",
+    "status":true,
+    "age": 12,
+    "lat": 98.332,
+    "lng: 87.214,
+    "friends": [
+        {
+            "id": 0,
+            "name": "Murphy Ward"
+        },
+        {
+            "id": 1,
+            "name": "Maxine Harris"
+        },
+        {
+            "id": 2,
+            "name": "Charles Abbott"
+        }
+    ]
+}
