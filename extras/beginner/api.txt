@@ -26,3 +26,14 @@ func main() {
 
 5. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user" Method GET response http 200 พร้อมกับ json ของ Users
 
+ุุ6. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user/:index" Method PUT จากนั้นนำ json ที่แนบมากับ request  binding เข้ากับ instance User ชั่วคราว
+แล้วนำ instance นั้นไปทำการ update Users ที่ index โดย index จะได้มาจาก param variable ที่ชื่อว่า 'index'
+response http 200 พร้อมกับ json ของ Users ที่แก้ไขไป
+
+ึ7. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user/:index/:field" Method PATCH จากนั้นนำ json ที่แนบมากับ request  binding เข้ากับ instance User ชั่วคราว
+แล้วนำ instance นั้นไปทำการ update Users ที่ index โดย index จะได้มาจาก param variable ที่ชื่อว่า 'index' โดย update เฉพาะ field กำกำหนดโดย param variable ที่ชื่อว่า 'field'
+จะเป็นตัวกำหนดว่าจะต้อง update field ไหน
+response http 200 พร้อมกับ json ของ Users index ที่แก้ไขไป
+
+8. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user/:index" Method GET 
+response http 200 พร้อมกับ json ของ Users ที่ index โดย index จะได้มาจาก param variable ที่ชื่อว่า 'index'
