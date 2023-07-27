@@ -22,7 +22,7 @@
     "isActive":true,
     "age": 12,
     "latitude": 98.332,
-    "longitude: 87.214
+    "longitude": 87.214
 }
 
 7. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
@@ -32,7 +32,7 @@
     "status":true,
     "age": 12,
     "lat": 98.332,
-    "lng: 87.214
+    "lng" : 87.214
 }
 
 8. สร้าง array struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
@@ -75,6 +75,7 @@
 }
 
 10. สร้าง struct ที่สามารถรองรับ json ดังต่อไปนี้และสร้าง instance และ binding json กับ instance และ print ออกมา
+
 {
     "firstname":"John",
     "gender":"male",
@@ -114,10 +115,6 @@
             "name": "Charles Abbott"
         }
     ],
-    "info":{
-        "id": 0,
-        "name": "Murphy Ward"
-    },
     "tags": [
         "qui",
         "consectetur",

@@ -1,0 +1,28 @@
+1. run api ให้ได้
+==================================================================
+package main
+
+import (
+    "net/http"
+    
+    "github.com/labstack/echo/v4"
+)
+
+func main() {
+    e := echo.New()
+    e.GET("/", func(c echo.Context) error {
+        return c.String(http.StatusOK, "Hello, World!")
+    })
+    e.Logger.Fatal(e.Start(":1323"))
+}
+==================================================================
+
+2. สร้าง struct User มี field Firstname Lastname Age
+
+3. สร้าง glbal variable ชื่อว่า Users เป็น array User ที่มี instance เป็น array เปล่า
+
+4. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user" Method POST โดยรับ json จาก request 
+และ binding เข้ากับ instance User ชั่วคราวแล้วนำ instance นั้นไปเพิ่มใน Users และ response http 200 พร้อมกับ คำว่า success
+
+5. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user" Method GET response http 200 พร้อมกับ json ของ Users
+
