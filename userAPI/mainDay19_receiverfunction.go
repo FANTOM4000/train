@@ -4,26 +4,16 @@ package main
 
 import (
 	//"fmt"
+	"app/userdata"
+
 	"net/http"
 	"strconv"
 
 	"github.com/labstack/echo/v4"
+	
 )
 
-// No#2
-type User struct {
-	Firstname string `json:"firstName"` //Camelcase variable
-	Lastname  string `json:"last_name"` //snake case vairable
-	Age       int    `json:"age"`
-}
 
-var Users []User //No#3 Global variable
-
-//https://stackoverflow.com/questions/37334119/how-to-delete-an-element-from-a-slice-in-golang
-// Removes slice element at index(s) and returns new slice
-func Remove[T any](Users []T, indexDelInt int) []T {
-    return append(Users[:indexDelInt], Users[indexDelInt+1:]...)
-}
 
 func main() {
 	e := echo.New()
@@ -34,18 +24,17 @@ func main() {
 
 	// No#4 https://echo.labstack.com/docs/binding
 	e.POST("/user", func(c echo.Context) error {
-		addUser := User{}
+		addUser := userdata.User{}
 		err := c.Bind(&addUser)
 		if err != nil {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
-
-		Users = append(Users, addUser)
+		addUser.Add()
 		return c.String(http.StatusOK, "200: Success!")
 	})
 
 	e.GET("/user", func(c echo.Context) error {
-		return c.JSON(200, Users)
+		return c.JSON(200, userdata.Users)
 	})
 
 	//ุุ6. สร้าง api 1 เส้นโดยมี routing ชื่อว่า "/user/:index" Method PUT จากนั้นนำ json ที่แนบมากับ request  binding เข้ากับ instance User ชั่วคราว
@@ -58,14 +47,15 @@ func main() {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
 
-		updateUserByIndex := User{}
+		updateUserByIndex := userdata.User{}
 		err = c.Bind(&updateUserByIndex)
 		if err != nil {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
-
-		Users[indexInt] = updateUserByIndex
-		return c.JSON(200, Users[indexInt])
+		updateUserByIndex.Id = indexInt
+		newUpdate := updateUserByIndex.Update()
+		
+		return c.JSON(200, newUpdate)
 		//return c.String(http.StatusOK, "200: Update PUT-method succeed!")
 
 	})
@@ -81,24 +71,25 @@ func main() {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
 		// Bidning data
-		updateUserByIndex := User{}
+		updateUserByIndex := userdata.User{}
 		err = c.Bind(&updateUserByIndex)
 		if err != nil {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
-
+		updateUserByIndex.Id = indexInt
 		//Verification field comparison
 		Field_nameString := c.Param("field")
+		u := userdata.User{}
 		if Field_nameString == "firstName" {
-			Users[indexInt].Firstname = updateUserByIndex.Firstname
+			u = updateUserByIndex.UpdateFirstname()
 		}
 		if Field_nameString == "last_name" {
-			Users[indexInt].Lastname = updateUserByIndex.Lastname
+			u = updateUserByIndex.UpdateLastname()
 		}
 		if Field_nameString == "age" {
-			Users[indexInt].Age = updateUserByIndex.Age
+			u = updateUserByIndex.UpdateAge()
 		}
-		return c.JSON(200, Users[indexInt])
+		return c.JSON(200, u)
 		//return c.String(http.StatusOK, "200: Update PATCH-method succeed!")
 	})
 
@@ -111,7 +102,10 @@ func main() {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
 
-		return c.JSON(200, Users[indexInt])
+		queryUserByIndex := userdata.User{}
+		queryUserByIndex.Id = indexInt
+		u := queryUserByIndex.Getby_id()
+		return c.JSON(200, u)
 	})
 
 //Homework#Day18 Tue-July25, 2023 หาวิธีลบ array index โดยระบุ id (index) Http method request: DEL user/:index
@@ -122,14 +116,14 @@ func main() {
 		if err != nil {
 			return c.String(http.StatusBadRequest, "400: bad request")
 		}
-		print(indexDelInt)
+		//print(indexDelInt)
 		// delete
 		//https://stackoverflow.com/questions/37334119/how-to-delete-an-element-from-a-slice-in-golang
-		// Removes slice element at index(s) and returns new slice
-// Removes slice element at index(s) and returns new slice
-func Remove[T any](Users []T, indexDelInt int) []T {
-    return append(Users[:indexDelInt], Users[indexDelInt+1:]...)
-},
+		// HWDay#18 Removes slice element at index(s) and returns new slice
+		queryUserByIndex := userdata.User{}
+		queryUserByIndex.Id = indexDelInt
+		queryUserByIndex.Delby_id()
+		//----------------------------------------------------------------
 		// delete
 		return c.String(http.StatusOK, "200: Delete success")
 	})
