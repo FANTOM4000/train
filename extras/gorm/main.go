@@ -41,6 +41,10 @@ func main() {
 	newUser1.Password = "4321"
 	client.Updates(&newUser1)
 
+	//update user
+	updateUser := User{Id: newUser1.Id, Password: "5678"}
+	client.Updates(&updateUser)
+
 	//get user by id
 	client.First(&user1)
 	fmt.Println(user1)
